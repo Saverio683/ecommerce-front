@@ -1,0 +1,119 @@
+$margin: 100px;
+$site-color: #ba3939;
+
+header {
+    position: fixed;
+    height: 120px;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 #00000064;
+    display: flex;
+    justify-content: space-between;
+
+        span, .icon {
+            margin: auto 0;
+            cursor: pointer;
+        }
+
+        .wrap1, .wrap2 {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        .wrap1 {
+            column-gap: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-left: $margin;
+    
+            .title {
+                margin-right: 30px;
+                font-size: 25px;
+                font-weight: bold;
+                color: $site-color;
+            }
+
+            .item:hover {
+                color: $site-color;
+                text-decoration: underline;
+            }
+        } 
+
+        .wrap2 {
+            margin-right: $margin;
+            align-items: center;
+            column-gap: 40px;
+
+            .cart-wrapper {
+                position: relative;
+
+                .amount {
+                    position: absolute;
+                    background-color: red;
+                    color: #fff;
+                    font-weight: 500;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    border-radius: 50%;
+                    bottom: -10px;
+                    right: -5px;
+                }
+
+                .cart-items-ct {
+                    position: absolute;
+                    top: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #fff;
+                    border: 1px solid #000;
+                    width: 150px;
+                    align-items: center;
+                    padding: 5px;
+                    row-gap: 5px;
+
+                    .item {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        img {
+                            margin: auto 0;
+                        }
+
+                        .wrapper {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: end;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        border: 1px solid #fff;
+                        background-color: #c8f4ff;
+                        padding: 5px 0;
+                        text-transform: uppercase;
+                        color: #000;
+                        font-size: 500;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                *.hidden {
+                    display: none;
+                }
+            }
+
+            input {
+                margin: 35px 0;         
+            }
+        }
+}

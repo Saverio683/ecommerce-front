@@ -1,0 +1,29 @@
+$site-color: #ba3939;
+
+footer {
+    padding: 30px 80px;
+
+    .row {
+        display: flex;        
+        justify-content: space-evenly;
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        .icon {
+            cursor: pointer;
+        }
+
+        .item {
+            font-size: 20px;
+            margin: 0 20px;
+            text-transform: capitalize;
+
+            &:hover {
+                color: $site-color;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

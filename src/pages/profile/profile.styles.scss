@@ -1,0 +1,147 @@
+$dot-width: 50;
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 80 / 100));
+    }
+    20% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 60 / 100));
+    }
+    30% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 40 / 100));
+    }
+    40% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 20 / 100));
+    }
+    50% {
+        transform: translateY($dot-width+0px);
+    }
+    60% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 20 / 100));
+    }
+    70% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 40 / 100));
+    }
+    80% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 60 / 100));   
+    }
+    90% {
+        transform: translateY(calc(#{$dot-width} - #{$dot-width} * 80 / 100));
+    }
+}
+
+.profile-page {
+    margin-top: 120px;
+
+    .loading-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+
+        .dot {
+            width: $dot-width+0px;
+            height: $dot-width+0px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 $dot-width/2 +0px;
+            animation: wave .8s infinite;
+            
+            &:nth-child(2) {
+                animation-delay: .3s;
+            }
+            
+            &:nth-child(3) {
+                animation-delay: .5s;
+            }
+        }
+    }
+
+    .auth-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 60px;
+            margin: 40px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+            row-gap: 30px;
+
+            input {
+                border-radius: 30px;
+                border: 1px solid #000;
+                padding: 15px;
+                font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+
+                &:focus {
+                    outline: 1px solid #ff0000;
+                }
+
+                &.birth-date {
+                    width: 200px;
+                    margin-left: auto;
+                }
+            }
+
+            button {
+                border-radius: 30px;
+                border: 2px solid #006aff;
+                padding: 15px;
+                font-size: 20px;
+                color: #006aff;
+                font-weight: 500;
+                text-align: center;
+                background-color: transparent;
+                transition: background-color 0.4s, color 0.4s;
+                width: 232px;
+                margin-left: auto;
+
+                &:hover {
+                    background-color: #006aff;
+                    cursor: pointer;
+                    color: #fff;
+                }
+            }
+        }
+
+        .password-errors {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            margin-top: 20px;
+            row-gap: 10px;
+
+            .error {
+                font-size: 15px;
+                color: #ff0000;
+            }
+        }
+
+        span {
+            font-size: 20px;
+            margin-top: 40px;
+
+            b {
+                text-decoration: underline;
+                color: #006aff;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+        }
+    }
+}
